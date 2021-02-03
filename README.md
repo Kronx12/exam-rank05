@@ -8,5 +8,6 @@
 
 ![Upsy](http://github.com/Kronx12/exam-rank05/blob/master/cpp01/rank_05_cpp_01_warlock.png?raw=true)
 
+![Upsy](http://github.com/Kronx12/exam-rank05/blob/master/cpp01/rank_05_cpp_01_aspell.png?raw=true)
 
 <h1 align="center">CPP 02</h1>
