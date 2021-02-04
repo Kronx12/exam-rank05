@@ -10,4 +10,4 @@ class Fwoosh : public ASpell {
         ~Fwoosh();
 };
 
-#endif
+#endif // !FWOOSH_HPP

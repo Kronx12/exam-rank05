@@ -2,12 +2,17 @@
 #define WARLOCK_HPP
 
 #include <string>
+#include <vector>
 #include <iostream>
+
+#include "ASpell.hpp"
+#include "SpellBook.hpp"
 
 class Warlock {
     private:
         std::string name;
         std::string title;
+        SpellBook spell_book;
 
         Warlock();
         Warlock(const Warlock &other);
@@ -21,6 +26,10 @@ class Warlock {
         void setTitle(std::string title);
 
         void introduce() const;
+
+        void learnSpell(ASpell *spell);
+        void forgetSpell(std::string name);
+        void launchSpell(std::string name, ATarget &ref);
 
         ~Warlock();
 };

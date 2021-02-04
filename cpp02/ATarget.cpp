@@ -11,6 +11,7 @@ ATarget &ATarget::operator=(const ATarget &other) {
 const std::string &ATarget::getType() const { return (type); }
 
 void ATarget::getHitBySpell(const ASpell &ref) const {
+    std::cout << getType() << "\n";
     std::cout << getType() << " has been " << ref.getEffects() << "!" << std::endl;
 }
 

@@ -14,30 +14,19 @@ void Warlock::introduce() const {
 }
 
 void Warlock::learnSpell(ASpell *spell) {
-    for (std::vector<ASpell *>::iterator itr = vec.begin(); itr != vec.end(); itr++)
-        if ((*itr)->getName() == spell->getName())
-            return ;
-    vec.push_back(spell);
+    spell_book.learnSpell(spell);
 }
 
 void Warlock::forgetSpell(std::string name) {
-    for (std::vector<ASpell *>::iterator itr = vec.begin(); itr != vec.end(); itr++)
-        if ((*itr)->getName() == name) {
-            vec.erase(itr);
-            return ;
-        }
+    spell_book.forgetSpell(name);
 }
 
 void Warlock::launchSpell(std::string name, ATarget &ref) {
-for (std::vector<ASpell *>::iterator itr = vec.begin(); itr != vec.end(); itr++)
-        if ((*itr)->getName() == name) {
-            ref.getHitBySpell(*(*itr));
-            return ;
-        }
+    ASpell *s = spell_book.createSpell(name);
+    ref.getHitBySpell(*s);
+    delete s;
 }
 
 Warlock::~Warlock() {
-    for (std::vector<ASpell *>::iterator itr = vec.begin(); itr != vec.end(); itr++)
-        delete *itr;
     std::cout << getName() << ": My job here is done!" << std::endl;
 }
