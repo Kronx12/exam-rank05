@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>90</x><y>180</y><w>320</w><h>410</h></coordinates><panel_attributes>*Warlock*
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>90</x><y>180</y><w>320</w><h>430</h></coordinates><panel_attributes>*Warlock*
 --
 *&lt;string&gt;, &lt;vector&gt;, &lt;iostream&gt;, "ATarget.hpp"*
 --
