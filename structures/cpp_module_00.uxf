@@ -1,0 +1,26 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>250</x><y>120</y><w>310</w><h>370</h></coordinates><panel_attributes>*Warlock*
+--
+*&lt;string&gt;, &lt;iostream&gt;*
+--
+PRIVATE
+-..
+-name: std::string
+-title: std::string
+
+Warlock()
+Warlock(const Warlock &amp;other)
+Warlock &amp;operator=(const Warlock &amp;other)
+
+--
+PUBLIC
+-..
+Warlock(const std::string &amp;name, const std::string &amp;title)
+
+const std::string &amp;getName() const
+const std::string &amp;getTitle() const
+
+void setTitle(const std::string &amp;title)
+
+void introduce() const
+
+~Warlock()</panel_attributes><additional_attributes></additional_attributes></element></diagram>

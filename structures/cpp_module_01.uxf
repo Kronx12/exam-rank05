@@ -1,0 +1,97 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>90</x><y>180</y><w>320</w><h>410</h></coordinates><panel_attributes>*Warlock*
+--
+*&lt;string&gt;, &lt;vector&gt;, &lt;iostream&gt;, "ATarget.hpp"*
+--
+PRIVATE
+-..
+-name: std::string
+-title: std::string
+-spells: std::vector&lt;ASpell *&gt;
+
+Warlock()
+Warlock(const Warlock &amp;other)
+Warlock &amp;operator=(const Warlock &amp;other)
+
+--
+PUBLIC
+-..
+Warlock(const std::string &amp;name, const std::string &amp;title)
+
+const std::string &amp;getName() const
+const std::string &amp;getTitle() const
+
+void setTitle(const std::string &amp;title)
+
+void introduce() const
+
+void learnSpell(ASpell *spell)
+void forgetSpell(std::string name)
+void launchSpell(std::string name, ATarget &amp;ref)
+
+~Warlock()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>180</y><w>330</w><h>350</h></coordinates><panel_attributes>*ASpell*
+{Abstract}
+--
+*&lt;string&gt;, "ATarget.hpp"*
+--
+PROTECTED
+-..
+-name: std::string
+-effects: std::string
+
+--
+PUBLIC
+-..
+ASpell()
+ASpell(const ASpell &amp;other)
+ASpell(const std::string &amp;pname, const std::string &amp;peffects)
+ASpell *operator=(const ASpell &amp;other)
+
+const std::string &amp;getName() const
+const std::string &amp;getEffects() const
+
+virtual ASpell *clone() const = 0
+
+void launch(const ATarget &amp;ref)
+
+virtual ~ASpell()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>180</y><w>230</w><h>320</h></coordinates><panel_attributes>*ATarget*
+{Abstract}
+--
+*&lt;string&gt;, "ASpell.hpp"*
+--
+PROTECTED
+-..
+-type: std::string
+
+--
+PUBLIC
+-..
+ATarget()
+ATarget(const ATarget &amp;other)
+ATarget(const std::string &amp;ptype)
+ATarget *operator=(const ATarget &amp;other)
+
+const std::string &amp;getType() const
+
+virtual ATarget *clone() const = 0
+
+void getHitBySpell(const ASpell &amp;ref)
+
+virtual ~ATarget()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>610</y><w>210</w><h>120</h></coordinates><panel_attributes>*Fwoosh : public ASpell*
+--
+*"ASpell.hpp"*
+--
+PUBLIC
+-..
+Fwoosh()
+virtual ASpell *clone() const
+virtual ~Fwoosh()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>610</y><w>230</w><h>120</h></coordinates><panel_attributes>*Dummy : public ATarget*
+--
+*"ATarget.hpp"*
+--
+PUBLIC
+-..
+Dummy()
+virtual ATarget *clone() const
+virtual ~Dummy()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>520</y><w>100</w><h>110</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>490</y><w>100</w><h>140</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element></diagram>
