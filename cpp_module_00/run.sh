@@ -1,0 +1,1 @@
+clang++ --std=c++98 -Wall -Wextra -Werror -fsanitize=address -g3 Warlock.cpp main.cpp -o binary && echo "" && ./binary | cat -e && echo "" && rm -rf binary *.dSYM
