@@ -1,0 +1,174 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>994</x><y>170</y><w>230</w><h>320</h></coordinates><panel_attributes>*ATarget*
+{Abstract}
+--
+*&lt;string&gt;, "ASpell.hpp"*
+--
+PROTECTED
+-..
+-type: std::string
+
+--
+PUBLIC
+-..
+ATarget()
+ATarget(const ATarget &amp;other)
+ATarget(const std::string &amp;ptype)
+ATarget *operator=(const ATarget &amp;other)
+
+const std::string &amp;getType() const
+
+virtual ATarget *clone() const = 0
+
+void getHitBySpell(const ASpell &amp;ref)
+
+virtual ~ATarget()
+group=4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1150</x><y>580</y><w>230</w><h>120</h></coordinates><panel_attributes>*Dummy : public ATarget*
+--
+*"ATarget.hpp"*
+--
+PUBLIC
+-..
+Dummy()
+virtual ATarget *clone() const
+virtual ~Dummy()
+group=4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>170</y><w>320</w><h>430</h></coordinates><panel_attributes>*Warlock*
+--
+*&lt;string&gt;, &lt;vector&gt;, &lt;iostream&gt;, "ATarget.hpp"*
+--
+PRIVATE
+-..
+-name: std::string
+-title: std::string
+-spells: SpellBook
+
+Warlock()
+Warlock(const Warlock &amp;other)
+Warlock &amp;operator=(const Warlock &amp;other)
+
+--
+PUBLIC
+-..
+Warlock(const std::string &amp;name, const std::string &amp;title)
+
+const std::string &amp;getName() const
+const std::string &amp;getTitle() const
+
+void setTitle(const std::string &amp;title)
+
+void introduce() const
+
+void learnSpell(ASpell *spell)
+void forgetSpell(std::string name)
+void launchSpell(std::string name, ATarget &amp;ref)
+
+~Warlock()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>170</y><w>330</w><h>350</h></coordinates><panel_attributes>*ASpell*
+{Abstract}
+--
+*&lt;string&gt;, "ATarget.hpp"*
+--
+PROTECTED
+-..
+-name: std::string
+-effects: std::string
+
+--
+PUBLIC
+-..
+ASpell()
+ASpell(const ASpell &amp;other)
+ASpell(const std::string &amp;pname, const std::string &amp;peffects)
+ASpell *operator=(const ASpell &amp;other)
+
+const std::string &amp;getName() const
+const std::string &amp;getEffects() const
+
+virtual ASpell *clone() const = 0
+
+void launch(const ATarget &amp;ref)
+
+virtual ~ASpell()
+group=5</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>610</y><w>210</w><h>120</h></coordinates><panel_attributes>*Fwoosh : public ASpell*
+--
+*"ASpell.hpp"*
+--
+PUBLIC
+-..
+Fwoosh()
+virtual ASpell *clone() const
+virtual ~Fwoosh()
+group=5</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>510</y><w>100</w><h>120</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;
+group=5</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1180</x><y>480</y><w>100</w><h>120</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;
+group=4</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>740</y><w>210</w><h>120</h></coordinates><panel_attributes>*Fireball : public ASpell*
+--
+*"ASpell.hpp"*
+--
+PUBLIC
+-..
+Fireball()
+virtual ASpell *clone() const
+virtual ~Fireball()
+group=5</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>510</y><w>100</w><h>250</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;
+group=5</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>880</y><w>210</w><h>120</h></coordinates><panel_attributes>*Polymorph : public ASpell*
+--
+*"ASpell.hpp"*
+--
+PUBLIC
+-..
+Polymorph()
+virtual ASpell *clone() const
+virtual ~Polymorph()
+group=5</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>510</y><w>100</w><h>390</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;
+group=5</panel_attributes><additional_attributes>10;10;10;370</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>730</y><w>230</w><h>120</h></coordinates><panel_attributes>*BrickWall : public ATarget*
+--
+*"ATarget.hpp"*
+--
+PUBLIC
+-..
+BrickWall()
+virtual ATarget *clone() const
+virtual ~BrickWall()
+group=4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>480</y><w>100</w><h>270</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;
+group=4</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>610</y><w>260</w><h>260</h></coordinates><panel_attributes>*SpellBook*
+--
+*&lt;string&gt;, "ASpell.hpp"*
+--
+PRIVATE
+-..
+-spells: std::vector&lt;ASpell *&gt;
+
+SpellBook(const SpellBook &amp;other)
+SpellBook &amp;operator=(const SpellBook &amp;other)
+--
+PUBLIC
+-..
+SpellBook()
+
+void learnSpell(ASpell *spell)
+void forgetSpell(string const &amp;name)
+ASpell *createSpell(string const &amp;name)
+
+~SpellBook()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>890</y><w>330</w><h>260</h></coordinates><panel_attributes>*TargetGenerator*
+--
+*&lt;string&gt;, "ATarget.hpp"*
+--
+PRIVATE
+-..
+-targets: std::vector&lt;ATarget *&gt;
+
+TargetGenerator(const TargetGenerator &amp;other)
+TargetGenerator &amp;operator=(const TargetGenerator &amp;other)
+--
+PUBLIC
+-..
+TargetGenerator()
+
+void learnTargetType(ATarget *target)
+void forgetTargetType(string const &amp;type)
+ATarget *createTarget(string const &amp;type)
+
+~TargetGenerator()</panel_attributes><additional_attributes></additional_attributes></element></diagram>

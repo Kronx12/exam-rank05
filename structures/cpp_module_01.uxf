@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>90</x><y>180</y><w>320</w><h>430</h></coordinates><panel_attributes>*Warlock*
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>150</x><y>190</y><w>320</w><h>430</h></coordinates><panel_attributes>*Warlock*
 --
 *&lt;string&gt;, &lt;vector&gt;, &lt;iostream&gt;, "ATarget.hpp"*
 --
@@ -28,7 +28,7 @@ void learnSpell(ASpell *spell)
 void forgetSpell(std::string name)
 void launchSpell(std::string name, ATarget &amp;ref)
 
-~Warlock()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>180</y><w>330</w><h>350</h></coordinates><panel_attributes>*ASpell*
+~Warlock()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>190</y><w>330</w><h>350</h></coordinates><panel_attributes>*ASpell*
 {Abstract}
 --
 *&lt;string&gt;, "ATarget.hpp"*
@@ -53,7 +53,7 @@ virtual ASpell *clone() const = 0
 
 void launch(const ATarget &amp;ref)
 
-virtual ~ASpell()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>180</y><w>230</w><h>320</h></coordinates><panel_attributes>*ATarget*
+virtual ~ASpell()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>834</x><y>190</y><w>230</w><h>320</h></coordinates><panel_attributes>*ATarget*
 {Abstract}
 --
 *&lt;string&gt;, "ASpell.hpp"*
@@ -76,7 +76,7 @@ virtual ATarget *clone() const = 0
 
 void getHitBySpell(const ASpell &amp;ref)
 
-virtual ~ATarget()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>610</y><w>210</w><h>120</h></coordinates><panel_attributes>*Fwoosh : public ASpell*
+virtual ~ATarget()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>620</y><w>210</w><h>120</h></coordinates><panel_attributes>*Fwoosh : public ASpell*
 --
 *"ASpell.hpp"*
 --
@@ -84,7 +84,7 @@ PUBLIC
 -..
 Fwoosh()
 virtual ASpell *clone() const
-virtual ~Fwoosh()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>610</y><w>230</w><h>120</h></coordinates><panel_attributes>*Dummy : public ATarget*
+virtual ~Fwoosh()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>620</y><w>230</w><h>120</h></coordinates><panel_attributes>*Dummy : public ATarget*
 --
 *"ATarget.hpp"*
 --
@@ -92,6 +92,6 @@ PUBLIC
 -..
 Dummy()
 virtual ATarget *clone() const
-virtual ~Dummy()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>520</y><w>100</w><h>110</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>490</y><w>100</w><h>140</h></coordinates><panel_attributes>lt=&lt;.
+virtual ~Dummy()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>530</y><w>100</w><h>110</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>940</x><y>500</y><w>100</w><h>140</h></coordinates><panel_attributes>lt=&lt;.
 &lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element></diagram>
